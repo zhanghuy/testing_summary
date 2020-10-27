@@ -31,8 +31,8 @@
  9. PATCH 是对 PUT 方法的补充，用来对已知资源进行局部更新 。
 
  ##### 2.3 HTTP请求头和常见状态码：
- https://github.com/zhanghuy/testing_summary/blob/main/pic/http%E8%AF%B7%E6%B1%82%E5%A4%B4.jpg
- https://github.com/zhanghuy/testing_summary/blob/main/pic/%E7%8A%B6%E6%80%81%E7%A0%81.jpg
+ ![请求头](https://github.com/zhanghuy/testing_summary/blob/main/pic/http%E8%AF%B7%E6%B1%82%E5%A4%B4.jpg)
+ ![状态码](https://github.com/zhanghuy/testing_summary/blob/main/pic/%E7%8A%B6%E6%80%81%E7%A0%81.jpg)
 
 #### 3. 三次握手和四次挥手
 * 三次握手：第一次客户端向服务端发送SYN=1,seq=x的数据包；
