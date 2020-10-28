@@ -7,6 +7,9 @@ def maopao1(lis):
                 lis[j+1], lis[j] = lis[j], lis[j+1]
     return lis
 ``` 
+1.1 二分查找
+```ruby 
+``` 
 2. 链表
 ```ruby 
 class ListNode:
@@ -147,3 +150,4 @@ print(maxsub(s))
     1.所有人抢到金额之和等于红包金额，不能超过，也不能少于。
     2.每个人至少抢到一分钱。
     3.要保证所有人抢到金额的几率相等。
+    
