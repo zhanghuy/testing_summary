@@ -55,6 +55,7 @@ js={'a':'aa', 'b':'bb', 'c':{'d':'dd','e':'ee','f':{'g':'gg','h':'hh'}}}
 print(get_value(js,'h'))
 ``` 
 `types模块，dir(types), types.DictType`
+
 4. 一个英文文件，计算文件中出现次数最多的前三个单词
 ```ruby 
 import re
@@ -117,3 +118,4 @@ print(findwords(filepath))
     $	匹配字符串的末尾。
     .	匹配任意字符，除了换行符，当re.DOTALL标记被指定时，则可以匹配包括换行符的任意字符。
     ```
+5. 一个字符串，找到不重复字符的最大子串的长度
