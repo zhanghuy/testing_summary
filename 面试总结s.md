@@ -149,5 +149,23 @@ print(maxsub(s))
     逻辑：
     1.所有人抢到金额之和等于红包金额，不能超过，也不能少于。
     2.每个人至少抢到一分钱。
-    3.要保证所有人抢到金额的几率相等。
+    #3.要保证所有人抢到金额的几率相等。
+    ```ruby
+    #领红包，不考虑概率
+    import random
+    def redpackage(money,num):
+    m=money=money*100
+    everyperson=0
+    res=[]
+    money = money-num
+    for n in range(num-1):
+        everyperson = random.randint(1, money)
+        res.append(everyperson)
+        money = money - everyperson
+    last = m-sum(res)
+    res.append(last)
+    res = [x/100 for x in res]
+    return res
+    print(redpackage(100,6))
+    ```
     
