@@ -1,63 +1,63 @@
 1. 冒泡排序
-```ruby 
-def maopao1(lis):
-    for i in range(len(lis)-1):
-        for j in range(len(lis)-i-1):
-            if lis[j]>lis[j+1]:
-                lis[j+1], lis[j] = lis[j], lis[j+1]
-    return lis
-``` 
+    ```ruby 
+    def maopao1(lis):
+        for i in range(len(lis)-1):
+            for j in range(len(lis)-i-1):
+                if lis[j]>lis[j+1]:
+                    lis[j+1], lis[j] = lis[j], lis[j+1]
+        return lis
+    ``` 
 1.1 二分查找
-```ruby 
-``` 
+    ```ruby 
+    ``` 
 2. 链表
-```ruby 
-class ListNode:
-    def __init__(self,val=0,next=None):
-        self.val = val
-        self.next = next
+    ```ruby 
+    class ListNode:
+        def __init__(self,val=0,next=None):
+            self.val = val
+            self.next = next
 
-n1=ListNode(1)
-n2=ListNode(2,n1)
-n3=ListNode(3,n2)
-n4=ListNode(4,n3)
-n5=ListNode(5,n4)
+    n1=ListNode(1)
+    n2=ListNode(2,n1)
+    n3=ListNode(3,n2)
+    n4=ListNode(4,n3)
+    n5=ListNode(5,n4)
 
-#2.1 链表查中间节点
-def midnode(l:ListNode):
-    p1=p2=l
-    while p2.next and p2.next.next:
-        p1=p1.next
-        p2=p2.next.next
-    return p1
+    #2.1 链表查中间节点
+    def midnode(l:ListNode):
+        p1=p2=l
+        while p2.next and p2.next.next:
+            p1=p1.next
+            p2=p2.next.next
+        return p1
 
-print(midnode(n5).val)
+    print(midnode(n5).val)
 
-#2.2 判断链表是否带环
-def iscir(l:ListNode):
-    p1=p2=l
-    while p2 and p2.next:
-        p1=p1.next
-        p2=p2.next.next
-        if p1==p2:
-            return True
-    return False
-```
+    #2.2 判断链表是否带环
+    def iscir(l:ListNode):
+        p1=p2=l
+        while p2 and p2.next:
+            p1=p1.next
+            p2=p2.next.next
+            if p1==p2:
+                return True
+        return False
+    ```
 3. 有一个json，{'a':'aa', 'b':'bb', 'c':{'d':'dd','e':'ee','f':{'g':'gg','h':'hh'}}}，找到h这个key对应的value
-```ruby 
-def get_value(dic, target):
-    res=""
-    for k,v in dic.items():
-        if k==str(target):
-            res = dic[target]
-            break
-        elif type(v) is type({}):
-            res = get_value(v,target)
-    return res
-js={'a':'aa', 'b':'bb', 'c':{'d':'dd','e':'ee','f':{'g':'gg','h':'hh'}}}
-print(get_value(js,'h'))
-``` 
-`types模块，dir(types), types.DictType`
+    ```ruby 
+    def get_value(dic, target):
+        res=""
+        for k,v in dic.items():
+            if k==str(target):
+                res = dic[target]
+                break
+            elif type(v) is type({}):
+                res = get_value(v,target)
+        return res
+    js={'a':'aa', 'b':'bb', 'c':{'d':'dd','e':'ee','f':{'g':'gg','h':'hh'}}}
+    print(get_value(js,'h'))
+    ``` 
+    `types模块，dir(types), types.DictType`
 
 4. 一个英文文件，计算文件中出现次数最多的前三个单词
 ```ruby 
@@ -122,37 +122,37 @@ print(findwords(filepath))
     .	匹配任意字符，除了换行符，当re.DOTALL标记被指定时，则可以匹配包括换行符的任意字符。
     ```
 5. 一个字符串，找到不重复字符的最大子串的长度s='abcdafedsabc'
-```ruby
-def maxsub(s):
-    sub=sub1=""
-    n=0
-    for c in s:
-        if c in sub:
-            i = sub.index(c)
-            sub = sub[i + 1:]
-        sub+=c
-        if n<len(sub):
-            n=len(sub)
-            sub1=sub
-    return (sub1,n)
-s='abcdafedsabc'
-print(maxsub(s))
-```
+    ```ruby
+    def maxsub(s):
+        sub=sub1=""
+        n=0
+        for c in s:
+            if c in sub:
+                i = sub.index(c)
+                sub = sub[i + 1:]
+            sub+=c
+            if n<len(sub):
+                n=len(sub)
+                sub1=sub
+        return (sub1,n)
+    s='abcdafedsabc'
+    print(maxsub(s))
+    ```
 6. 输入字符串“123+23456”，整型间的加操作，求结果，追问如果里面的数值非常大超过了int的范围怎么办
 7. 输入一个整形数组，数组里有正数也有负数。数组中连续的一个或多个整数组成一个子数组，每个子数组都有一个和。求所有子数组的和的最大值，考虑时间复杂度
 8. 输入整形数组，对数组进行排序，左侧放奇数，右侧放偶数
-```ruby
-def customsort(lis):
-    l,leftl,rightl=[],[],[]
-    for i in lis:
-        if i%2 == 1:
-            leftl.append(i)
-        else:
-            rightl.append(i)
-    l=leftl+rightl
-    return l
-print(customsort([3,6,1,6,87,9,2,4,0,-3,-10]))
-```
+    ```ruby
+    def customsort(lis):
+        l,leftl,rightl=[],[],[]
+        for i in lis:
+            if i%2 == 1:
+                leftl.append(i)
+            else:
+                rightl.append(i)
+        l=leftl+rightl
+        return l
+    print(customsort([3,6,1,6,87,9,2,4,0,-3,-10]))
+    ```
 9. 一个数组[“flower ”，“flow ”，“flight ”]，找出三个字符串的共有子串fl‘
 10. 找出字符串的所有子串
 11. 领红包：
@@ -180,4 +180,19 @@ res = [x/100 for x in res]
 return res
 print(redpackage(100,6))
 ```
-    
+12. 求2个字符串的最长公共子串
+    ```ruby
+    def ggsubs(str1,str2):
+        f=[[0 for x in range(len(str2)+1)] for j in range(len(str1)+1)]
+        maxsub=''
+        maxlen=0
+        for i in range(len(str1)):
+            for j in range(len(str2)):
+                if str1[i]==str2[j]:
+                    f[i+1][j+1]=f[i][j]+1
+                if maxlen<f[i+1][j+1]:
+                    maxlen=f[i+1][j+1]
+                    maxsub=str1[i+1-maxlen:i+1]
+        return maxsub
+    print(ggsubs('abcdefg','defgabcd'))
+    ```
