@@ -154,7 +154,18 @@ def customsort(lis):
 print(customsort([3,6,1,6,87,9,2,4,0,-3,-10]))
 ```
 9. 一个数组[“flower ”，“flow ”，“flight ”]，找出三个字符串的共有子串fl‘
-10. 找出字符串的所有子串
+10. 子串
+```ruby
+#求字符串中的所有子串
+def allsubs(str):
+    res = []
+    for i in range(1,len(str)):
+        for j in range(0,len(str)):
+            if str[j:j+i] not in res:
+                res.append(str[j:j+i])
+    return res
+print(allsubs('abcd'))
+```
 11. 领红包：
   > 入参：金额、人数
     输出：输出所有金额
