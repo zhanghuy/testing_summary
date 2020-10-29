@@ -153,7 +153,7 @@ print(customsort([3,6,1,6,87,9,2,4,0,-3,-10]))
 9. 一个数组[“flower ”，“flow ”，“flight ”]，找出三个字符串的共有子串fl‘
 10. 子串
 ```ruby
-(1). 求字符串中的所有子串
+#(1). 求字符串中的所有子串
 def allsubs(str):
     res = []
     for i in range(1,len(str)):
@@ -162,7 +162,7 @@ def allsubs(str):
                 res.append(str[j:j+i])
     return res
 print(allsubs('abcd'))
-(2). 一个字符串，找到不重复字符的最大子串的长度s='abcdafedsabc'
+#(2). 一个字符串，找到不重复字符的最大子串的长度s='abcdafedsabc'
 def maxsub(s):
     sub=sub1=""
     n=0
@@ -177,11 +177,11 @@ def maxsub(s):
     return (sub1,n)
 s='abcdafedsabc'
 print(maxsub(s))
-(3). 最长重复子串
-(4). 单字符最长重复子串
-(5). 最长回文串
-(6). 最长回文子序列
-(7). 求2个字符串的最长公共子串
+#(3). 最长重复子串
+#(4). 单字符最长重复子串
+#(5). 最长回文串
+#(6). 最长回文子序列
+#(7). 求2个字符串的最长公共子串
 def ggsubs(str1,str2):
     f=[[0 for x in range(len(str2)+1)] for j in range(len(str1)+1)]
     maxsub=''
@@ -195,8 +195,8 @@ def ggsubs(str1,str2):
                 maxsub=str1[i+1-maxlen:i+1]
     return maxsub
 print(ggsubs('abcdefg','defgabcd'))
-(8). 最长公共子序列
-(9). 最长定差子序列,
+#(8). 最长公共子序列
+#(9). 最长定差子序列,
 
 ```
 11. 领红包：
