@@ -9,6 +9,20 @@ def maopao1(lis):
 ``` 
 1.1 二分查找
 ```ruby 
+def search(nums, target):
+    left,right=0,len(nums)-1
+    while(left<=right):
+        p=left+int((right-left)/2)
+        if nums[p]<target:
+            left=p+1
+        elif nums[p]>target:
+            right=p-1
+        elif nums[p]==target:
+            return p
+        else:
+            return -1
+    return -1
+print(search([-1,0,3,5,9,12],12))
 ``` 
 2. 链表
 ```ruby 
@@ -121,23 +135,6 @@ print(findwords(filepath))
     $	匹配字符串的末尾。
     .	匹配任意字符，除了换行符，当re.DOTALL标记被指定时，则可以匹配包括换行符的任意字符。
     ```
-5. 一个字符串，找到不重复字符的最大子串的长度s='abcdafedsabc'
-```ruby
-def maxsub(s):
-    sub=sub1=""
-    n=0
-    for c in s:
-        if c in sub:
-            i = sub.index(c)
-            sub = sub[i + 1:]
-        sub+=c
-        if n<len(sub):
-            n=len(sub)
-            sub1=sub
-    return (sub1,n)
-s='abcdafedsabc'
-print(maxsub(s))
-```
 6. 输入字符串“123+23456”，整型间的加操作，求结果，追问如果里面的数值非常大超过了int的范围怎么办
 7. 输入一个整形数组，数组里有正数也有负数。数组中连续的一个或多个整数组成一个子数组，每个子数组都有一个和。求所有子数组的和的最大值，考虑时间复杂度
 8. 输入整形数组，对数组进行排序，左侧放奇数，右侧放偶数
@@ -156,7 +153,7 @@ print(customsort([3,6,1,6,87,9,2,4,0,-3,-10]))
 9. 一个数组[“flower ”，“flow ”，“flight ”]，找出三个字符串的共有子串fl‘
 10. 子串
 ```ruby
-#求字符串中的所有子串
+(1). 求字符串中的所有子串
 def allsubs(str):
     res = []
     for i in range(1,len(str)):
@@ -165,6 +162,42 @@ def allsubs(str):
                 res.append(str[j:j+i])
     return res
 print(allsubs('abcd'))
+(2). 一个字符串，找到不重复字符的最大子串的长度s='abcdafedsabc'
+def maxsub(s):
+    sub=sub1=""
+    n=0
+    for c in s:
+        if c in sub:
+            i = sub.index(c)
+            sub = sub[i + 1:]
+        sub+=c
+        if n<len(sub):
+            n=len(sub)
+            sub1=sub
+    return (sub1,n)
+s='abcdafedsabc'
+print(maxsub(s))
+(3). 最长重复子串
+(4). 单字符最长重复子串
+(5). 最长回文串
+(6). 最长回文子序列
+(7). 求2个字符串的最长公共子串
+def ggsubs(str1,str2):
+    f=[[0 for x in range(len(str2)+1)] for j in range(len(str1)+1)]
+    maxsub=''
+    maxlen=0
+    for i in range(len(str1)):
+        for j in range(len(str2)):
+            if str1[i]==str2[j]:
+                f[i+1][j+1]=f[i][j]+1
+            if maxlen<f[i+1][j+1]:
+                maxlen=f[i+1][j+1]
+                maxsub=str1[i+1-maxlen:i+1]
+    return maxsub
+print(ggsubs('abcdefg','defgabcd'))
+(8). 最长公共子序列
+(9). 最长定差子序列,
+
 ```
 11. 领红包：
   > 入参：金额、人数
@@ -191,19 +224,4 @@ res = [x/100 for x in res]
 return res
 print(redpackage(100,6))
 ```
-12. 求2个字符串的最长公共子串
-```ruby
-def ggsubs(str1,str2):
-    f=[[0 for x in range(len(str2)+1)] for j in range(len(str1)+1)]
-    maxsub=''
-    maxlen=0
-    for i in range(len(str1)):
-        for j in range(len(str2)):
-            if str1[i]==str2[j]:
-                f[i+1][j+1]=f[i][j]+1
-            if maxlen<f[i+1][j+1]:
-                maxlen=f[i+1][j+1]
-                maxsub=str1[i+1-maxlen:i+1]
-    return maxsub
-print(ggsubs('abcdefg','defgabcd'))
-```
+
