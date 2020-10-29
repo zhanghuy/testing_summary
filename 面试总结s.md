@@ -141,6 +141,18 @@ print(maxsub(s))
 6. 输入字符串“123+23456”，整型间的加操作，求结果，追问如果里面的数值非常大超过了int的范围怎么办
 7. 输入一个整形数组，数组里有正数也有负数。数组中连续的一个或多个整数组成一个子数组，每个子数组都有一个和。求所有子数组的和的最大值，考虑时间复杂度
 8. 输入整形数组，对数组进行排序，左侧放奇数，右侧放偶数
+```ruby
+def customsort(lis):
+    l,leftl,rightl=[],[],[]
+    for i in lis:
+        if i%2 == 1:
+            leftl.append(i)
+        else:
+            rightl.append(i)
+    l=leftl+rightl
+    return l
+print(customsort([3,6,1,6,87,9,2,4,0,-3,-10]))
+```
 9. 一个数组[“flower ”，“flow ”，“flight ”]，找出三个字符串的共有子串fl‘
 10. 找出字符串的所有子串
 11. 领红包：
