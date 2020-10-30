@@ -184,7 +184,24 @@ print(maxsub(s))
 #(4). 单字符最长重复子串
 
 #(5). 最长回文串
+def longestPalindrome(s):
+    if len(s)<2:
+        return s
+    begin,maxlen=0,1
+    for i in range(0, len(s)-1):
+        for j in range(i+1,len(s)):
+            if j-i+1>maxlen and self.ishw(s,i,j):
+                maxlen=j-i+1
+                begin=i
+    return s[begin:begin+maxlen]
 
+def ishw(s,left,right):
+    while left<right:
+        if s[left]!=s[right]:
+            return False
+        left+=1
+        right-=1
+    return True
 #(6). 最长回文子序列
 
 #(7). 求2个字符串的最长公共子串
