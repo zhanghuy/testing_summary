@@ -202,6 +202,25 @@ def ishw(s,left,right):
         left+=1
         right-=1
     return True
+    
+#(6). 给定一个包含大写字母和小写字母的字符串，找到通过这些字母构造成的最长的回文串。在构造过程中，请注意区分大小写。比如 "Aa" 不能当做一个回文字符串。
+#注意:假设字符串的长度不会超过 1010。
+def longestPalindrome(s):
+        dic={}
+        res,n,flag=0,0,0
+        for c in s:
+            dic.setdefault(c,0)
+            dic[c]+=1
+        for k,v in dic.items():
+            if v%2==1:
+                n+=1
+                flag=1
+            res+=v  
+        return res-(n-1)*flag
+
+来源：力扣（LeetCode）
+链接：https://leetcode-cn.com/problems/longest-palindrome
+著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 #(6). 最长回文子序列
 
 #(7). 求2个字符串的最长公共子串
