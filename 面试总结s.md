@@ -56,6 +56,23 @@ def iscir(l:ListNode):
         if p1==p2:
             return True
     return False
+#2.3 两个链表是否相交，并返回首个相交点
+def getIntersectionNode(headA: ListNode, headB: ListNode):
+    if headA and headB:
+        a,b=headA,headB
+        while a != b:
+            a=a.next
+            if a==None:
+                a=headB
+                headB=None
+            b=b.next
+            if b==None:
+                b=headA
+                headA=None
+        return a
+    #   return True if a!=None else False
+    #else:
+    #   return False
 ```
 3. 有一个json，{'a':'aa', 'b':'bb', 'c':{'d':'dd','e':'ee','f':{'g':'gg','h':'hh'}}}，找到h这个key对应的value
 ```ruby 
