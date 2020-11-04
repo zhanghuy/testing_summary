@@ -152,6 +152,18 @@ print(findwords(filepath))
     $	匹配字符串的末尾。
     .	匹配任意字符，除了换行符，当re.DOTALL标记被指定时，则可以匹配包括换行符的任意字符。
     ```
+    ```rub
+    #统计字符串中字母数字和空格的个数
+    import collections
+    import re
+    def tongji(str):
+        jimu=len(re.findall(r'[a-zA-Z]',str))
+        shuzi=len(re.findall(r'[1-9]',str))
+        kongge=len(re.findall(r'\s',str))
+        qita=len(re.findall(r'[^\s\d\w]',str))
+        print(jimu,shuzi,kongge,qita)
+    tongji('adgd23n 4 f *&& f')
+    ```
 6. 输入字符串“123+23456”，整型间的加操作，求结果，追问如果里面的数值非常大超过了int的范围怎么办
 7. 输入一个整形数组，数组里有正数也有负数。数组中连续的一个或多个整数组成一个子数组，每个子数组都有一个和。求所有子数组的和的最大值，考虑时间复杂度
 8. 输入整形数组，对数组进行排序，左侧放奇数，右侧放偶数
