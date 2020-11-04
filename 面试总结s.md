@@ -294,3 +294,30 @@ def maxSubArray(self, nums: List[int]) -> int:
             nums[i]+=max(nums[i-1],0)
         return max(nums)
 ```
+13. 判断是不是平衡二叉树
+```ruby
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+
+class Solution:
+    def isBalanced(self, root: TreeNode) -> bool:
+        #后序遍历+剪支
+        def f(root):
+            if root==None:
+                return 0
+            left = f(root.left)
+            if left== -1:
+                return -1
+            right = f(root.right)
+            if right == -1:
+                return -1
+            if abs(left-right)<=1:
+                return max(left,right)+1
+            else:
+                return -1
+        return f(root) != -1
+```
